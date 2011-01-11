@@ -8,7 +8,7 @@
     File = FileApi.File,
     FileReader = FileApi.FileReader,
     fileData = {
-      path: './files/coolaj86-2010.jpg',
+      path: __dirname + '/../files/coolaj86-2010.jpg',
       name: 'coolaj86-2010.jpg',
       type: 'image/jpeg'
     },

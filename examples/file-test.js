@@ -8,7 +8,7 @@
     File = FileApi.File,
     FileReader = FileApi.FileReader,
     fileData = {
-      path: './files/coolaj86-2010.jpg',
+      path: __dirname + '/../files/coolaj86-2010.jpg',
       name: 'coolaj86-2010.jpg',
       type: 'image/jpeg'
     },
@@ -42,7 +42,7 @@
       file = new File(fileData);
       delete file.stat;
       file.lastModifiedDate = file.lastModifiedDate.toISOString();
-      assert.deepEqual(file, { path: './files/coolaj86-2010.jpg'
+      assert.deepEqual(file, { path: fileData.path
         , name: 'coolaj86-2010.jpg'
         , type: 'image/jpeg'
         , jsdom: true
@@ -57,7 +57,7 @@
     .then(function (next) {
       fileData.async = true; 
       file = new File(fileData);
-      assert.deepEqual(file, { path: './files/coolaj86-2010.jpg'
+      assert.deepEqual(file, { path: fileData.path
         , name: 'coolaj86-2010.jpg'
         , type: 'image/jpeg'
         , jsdom: true
@@ -66,7 +66,7 @@
       setTimeout(function () {
         delete file.stat;
         file.lastModifiedDate = file.lastModifiedDate.toISOString();
-        assert.deepEqual(file, { path: './files/coolaj86-2010.jpg'
+        assert.deepEqual(file, { path: fileData.path
           , name: 'coolaj86-2010.jpg'
           , type: 'image/jpeg'
           , jsdom: true
