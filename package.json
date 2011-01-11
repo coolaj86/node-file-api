@@ -1,0 +1,12 @@
+{
+  "name"          : "file-api",
+  "description"   : "HTML5 FileAPI for Node.JS.",
+  "url"           : "http://github.com/coolaj86/node-file-api/",
+  "keywords"      : ["html5", "jsdom", "file-api"],
+  "author"        : "AJ ONeal <coolaj86@gmail.com>",
+  "contributors"  : [],
+  "dependencies"  : ["bufferjs", "noop", "futures"],
+  "lib"           : "lib",
+  "main"          : "./lib/index",
+  "version"       : "0.9.0"
+}
