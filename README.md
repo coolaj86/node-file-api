@@ -62,8 +62,6 @@ In the browser, `File` has no constructor. In Node, it does.
 
 **File(Object)**
 
-Only `path` is necessary
-
     var file = new File({
       path: "./files/myfile.txt",   // path of file to read
 
@@ -100,18 +98,18 @@ Only `path` is necessary
 FileReader
 ----
 
-**`FileReader.setNodeChunkedEncoding`** is a `non-standard` method which hints that the `FileReader` should chunk if possible
+**FileReader.setNodeChunkedEncoding()** is a *non-standard* method which hints that the `FileReader` should chunk if possible
 
 I.E. the file will be chunk-transferred via http upload)
 
 The default is `false` since many webservers do not correctly implement the standard correctly,
 and hence do not accept chunked encoding from clients.
 
-**`FileReader.on`** is a `non-standard` alias of `addEventListener`
+**FileReader.on** is a *non-standard* alias of `addEventListener`
 
-**`EventTarget.target.nodeBufferResult`** is a `non-standard` property which is a `Node.Buffer` instance of the data.
+**EventTarget.target.nodeBufferResult** is a *non-standard* property which is a `Node.Buffer` instance of the data.
 
-**`FileReader.on('data', fn)`** is a `non-standard` event which passes a `Node.Buffer` chunk each time the `progress` event is fired.
+**FileReader.on('data', fn)** is a *non-standard* event which passes a `Node.Buffer` chunk each time the `progress` event is fired.
 
     var fileReader = new FileReader();
 
@@ -156,6 +154,8 @@ The browser has no constructor for this. Node has two.
 Formal Documentation
 ====
 
+W3C
+
   * [W3C: FileAPI](http://dev.w3.org/2006/webapi/FileAPI)
   * [W3C: Blob](http://dev.w3.org/2006/webapi/FileAPI/#dfn-Blob)
   * [W3C: File](http://dev.w3.org/2006/webapi/FileAPI/#dfn-file)
@@ -163,6 +163,8 @@ Formal Documentation
   * [W3C: FileReader](http://dev.w3.org/2006/webapi/FileAPI/#dfn-filereader)
   * [W3C: FileError](http://dev.w3.org/2006/webapi/FileAPI/#dfn-fileerror)
   * [W3C: URI scheme](http://dev.w3.org/2006/webapi/FileAPI/#url)
+
+Mozilla Developer Center:
 
   * [MDC: Using files from web applications](https://developer.mozilla.org/en/using_files_from_web_applications)
   * [MDC: File](https://developer.mozilla.org/en/DOM/File)
