@@ -8,7 +8,11 @@ The goal here is to be able to use this in connection with `jsdom` to create tes
 Usage
 ====
 
+Install:
+
     npm install file-api
+
+Use:
 
     var FileAPI = require('file-api'),
       File = FileAPI.File,
@@ -152,18 +156,18 @@ The browser has no constructor for this. Node has two.
 Formal Documentation
 ====
 
-    * [W3C: FileAPI](http://dev.w3.org/2006/webapi/FileAPI)
-    * [W3C: Blob](http://dev.w3.org/2006/webapi/FileAPI/#dfn-Blob)
-    * [W3C: File](http://dev.w3.org/2006/webapi/FileAPI/#dfn-file)
-    * [W3C: FileList](http://dev.w3.org/2006/webapi/FileAPI/#dfn-filelist)
-    * [W3C: FileReader](http://dev.w3.org/2006/webapi/FileAPI/#dfn-filereader)
-    * [W3C: FileError](http://dev.w3.org/2006/webapi/FileAPI/#dfn-fileerror)
-    * [W3C: URI scheme](http://dev.w3.org/2006/webapi/FileAPI/#url)
+  * [W3C: FileAPI](http://dev.w3.org/2006/webapi/FileAPI)
+  * [W3C: Blob](http://dev.w3.org/2006/webapi/FileAPI/#dfn-Blob)
+  * [W3C: File](http://dev.w3.org/2006/webapi/FileAPI/#dfn-file)
+  * [W3C: FileList](http://dev.w3.org/2006/webapi/FileAPI/#dfn-filelist)
+  * [W3C: FileReader](http://dev.w3.org/2006/webapi/FileAPI/#dfn-filereader)
+  * [W3C: FileError](http://dev.w3.org/2006/webapi/FileAPI/#dfn-fileerror)
+  * [W3C: URI scheme](http://dev.w3.org/2006/webapi/FileAPI/#url)
 
-    * [MDC: Using files from web applications](https://developer.mozilla.org/en/using_files_from_web_applications)
-    * [MDC: File](https://developer.mozilla.org/en/DOM/File)
-    * [MDC: FileList](https://developer.mozilla.org/en/DOM/FileList)
-    * [MDC: FileReader](https://developer.mozilla.org/en/DOM/FileReader)
+  * [MDC: Using files from web applications](https://developer.mozilla.org/en/using_files_from_web_applications)
+  * [MDC: File](https://developer.mozilla.org/en/DOM/File)
+  * [MDC: FileList](https://developer.mozilla.org/en/DOM/FileList)
+  * [MDC: FileReader](https://developer.mozilla.org/en/DOM/FileReader)
 
 TODO
 ====
