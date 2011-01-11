@@ -5,7 +5,11 @@
   "keywords"      : ["html5", "jsdom", "file-api"],
   "author"        : "AJ ONeal <coolaj86@gmail.com>",
   "contributors"  : [],
-  "dependencies"  : ["bufferjs", "noop", "futures"],
+  "dependencies"  : {
+                      "bufferjs": "> 0.1.0",
+                      "noop": ">= 0.1.0",
+                      "futures": ">= 1.9.0"
+                    },
   "lib"           : "lib",
   "main"          : "./lib/index",
   "version"       : "0.9.0"
