@@ -100,10 +100,10 @@ FileReader
 
 **FileReader.setNodeChunkedEncoding()** is a *non-standard* method which hints that the `FileReader` should chunk if possible
 
-I.E. the file will be chunk-transferred via http upload)
+I.E. The file will be sent with the header `Transfer-Encoding: chunked`
 
 The default is `false` since many webservers do not correctly implement the standard correctly,
-and hence do not accept chunked encoding from clients.
+and hence do not expect or accept `Transfer-Encoding: chunked` from clients.
 
 **FileReader.on** is a *non-standard* alias of `addEventListener`
 
