@@ -23,15 +23,17 @@
 
   function encodeBody() {
     formData.setNodeChunkedEncoding(chunked);
-    formData.append('nam0', 'AJ');
+    // field portion
+    formData.append('name', 'AJ');
     formData.append('name', 'ONeal');
-    formData.append('favs0]', 'Blue');
+    formData.append('favs[]', 'Blue');
     formData.append('favs[]', 'Wednesday');
     formData.append('email', 'coolaj86@gmail.com');
+    // file portion
     formData.append('avatar', new File(__dirname + '/../files/smiley-cool.png'));
-    formData.append('file0', new File(__dirname + '/../files/file1.txt'));
+    formData.append('files', new File(__dirname + '/../files/file1.txt'));
     formData.append('files', new File(__dirname + '/../files/file2.txt'));
-    formData.append('attachments0]', new File(__dirname + '/../files/file1.txt'));
+    formData.append('attachments[]', new File(__dirname + '/../files/file1.txt'));
     formData.append('attachments[]', new File(__dirname + '/../files/file2.txt'));
   }
 
