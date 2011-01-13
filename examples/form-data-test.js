@@ -11,6 +11,8 @@
 
   formData.setNodeChunkedEncoding(chunked);
 
+  // TODO auto-unfold arrays onto `key[]`
+  // TODO auto-unfold objects onto `key[subkey]`
   formData.append('items[]', 'value0');
   formData.append('items[]', 'value1');
   formData.append('item', 'value2');
