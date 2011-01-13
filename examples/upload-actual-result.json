@@ -1,0 +1,60 @@
+{
+  fields: {
+    "name": "ONeal",
+    "favs[]": "Wednesday",
+    "email": "coolaj86@gmail.com"
+  },
+  files: {
+    "avatar": {
+      "length": 869,
+      "path": "/tmp/25832c732b5a165954ba3801a85c3a7c.png",
+      "filename": "smiley-cool.png",
+      "mime": "image/png",
+      "_writeStream": {
+        "path": "/tmp/25832c732b5a165954ba3801a85c3a7c.png",
+        "fd": 9,
+        "writeable": false,
+        "flags": "w",
+        "encoding": "binary",
+        "mode": 438,
+        "busy": false,
+        "_queue": [],
+        "drainable": true
+      }
+    },
+    "files": {
+      "length": 58,
+      "path": "/tmp/7bce8d3c3cb036c0748acfd9be34f1f8.txt",
+      "filename": "file2.txt",
+      "mime": "text/plain",
+      "_writeStream": {
+        "path": "/tmp/7bce8d3c3cb036c0748acfd9be34f1f8.txt",
+        "fd": 11,
+        "writeable": false,
+        "flags": "w",
+        "encoding": "binary",
+        "mode": 438,
+        "busy": false,
+        "_queue": [],
+        "drainable": true
+      }
+    },
+    "attachments[]": {
+      "length": 58,
+      "path": "/tmp/df733d4f2571e936c68f3532ec45f730.txt",
+      "filename": "file2.txt",
+      "mime": "text/plain",
+      "_writeStream": {
+        "path": "/tmp/df733d4f2571e936c68f3532ec45f730.txt",
+        "fd": 13,
+        "writeable": false,
+        "flags": "w",
+        "encoding": "binary",
+        "mode": 438,
+        "busy": false,
+        "_queue": [],
+        "drainable": true
+      }
+    }
+  }
+}

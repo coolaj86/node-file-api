@@ -2,68 +2,73 @@
   "use strict";
 
   var http = require('http'),
+    FileApi = require('../lib'),
     File = require('../lib/file.js'),
     FormData = require('../lib/form-data.js'),
     formData = new FormData(),
-    chunked = (new Date().valueOf() % 2) ? true : false,
     client = http.createClient(3000, 'localhost'),
+    headers = {
+      "Host": "localhost:3000",
+      "User-Agent": "Node.js (AbstractHttpRequest)",
+      "Accept-Encoding": "gzip,deflate",
+      //"Accept-Charset": "ISO-8859-1,utf-8;q=0.7,*;q=0.7",
+      //"Keep-Alive": 115,
+      //"Connection": "keep-alive",
+    },
+    //chunked = false,
+    chunked = true,
     bodyStream,
-    headers,
-    body,
-    request,
-    requestChunked;
+    request;
 
-  formData.setNodeChunkedEncoding(chunked);
 
-  formData.append('items[]', 'value0');
-  formData.append('items[]', 'value1');
-  formData.append('item', 'value2');
-  formData.append('item', 'value3');
-  formData.append('file1', new File(__dirname + '/../files/file2.txt'));
-  formData.append('emoticon', new File(__dirname + '/../files/smiley-cool.png'));
-  formData.append('avatar', new File(__dirname + '/../files/coolaj86-2010.jpg'));
+  function encodeBody() {
+    formData.setNodeChunkedEncoding(chunked);
+    formData.append('nam0', 'AJ');
+    formData.append('name', 'ONeal');
+    formData.append('favs0]', 'Blue');
+    formData.append('favs[]', 'Wednesday');
+    formData.append('email', 'coolaj86@gmail.com');
+    formData.append('avatar', new File(__dirname + '/../files/smiley-cool.png'));
+    formData.append('file0', new File(__dirname + '/../files/file1.txt'));
+    formData.append('files', new File(__dirname + '/../files/file2.txt'));
+    formData.append('attachments0]', new File(__dirname + '/../files/file1.txt'));
+    formData.append('attachments[]', new File(__dirname + '/../files/file2.txt'));
+  }
 
-  // Uses 'x-www-form-urlencoded' if possible
-  bodyStream = formData.serialize('x-www-form-urlencoded');
+  function sendBody() {
+    // Uses 'x-www-form-urlencoded' if possible, but falls back to 'multipart/form-data; boundary=`randomString()`'
+    bodyStream = formData.serialize('x-www-form-urlencoded');
 
-  requestChunked = client.request('POST', '/', {
-    "Host": "localhost:3000",
-    "Content-Type": formData.getContentType(),
-    "Transfer-Encoding": "chunked"
-  });
+    headers["Content-Type"] =  formData.getContentType();
+    if (chunked) {
+      request = client.request('POST', '/', headers);
+      bodyStream.on('data', function (data) {
+        request.write(data);
+      });
+    }
 
-  bodyStream.on('data', function (data) {
-    // Node takes care of the chunk sizes and count
-    /*
-      "\r\n" + data.length.toString(16) + data
-    */
-    requestChunked.write(data);
-  });
-  bodyStream.on('load', function () {
-    // Node takes care of the body footer
-    /*
-      "\r\n" + 0 + "\r\n\r\n"
-    */
-    requestChunked.end();
-  });
-
-  // `size` will always occur before `load`
-  // but will likely not occur before the
-  // first `data`
-  bodyStream.on('size', function (size) {
-    request = client.request('POST', '/', {
-      "Host": "localhost",
-      "Content-Type": formData.getContentType(),
-      "Content-Length": size
+    // `data` will usually fire first, then `size`, then more `data`, then `load`
+    bodyStream.on('size', function (size) {
+      if (chunked) {
+        return;
+      } else {
+        headers["Content-Length"] = size;
+        request = client.request('POST', '/', headers);
+      }
     });
-  });
 
-  bodyStream.on('load', function (data) {
-    request.write(data);
-    request.end();
-    request.on('response', function (response) {
-      //response.on();
+    bodyStream.on('load', function (data) {
+      if (!chunked) {
+        request.write(data);
+      }
+      request.end();
     });
-  });
+  }
 
+
+  encodeBody();
+  sendBody();
+  // Does work on keep-alive
+  // Does work with content-length
+  // Does work when chunked (when content-length is commented out)
 }());
