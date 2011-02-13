@@ -28,6 +28,8 @@
   // Check to see if contentType has switched to 'multipart/form-data'
   console.log(formData.getContentType());
 
+
+  // TODO implement 'pause'
   bodyStream.on('data', function (data) {
     count += 1;
     size += data.length;
