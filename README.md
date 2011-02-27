@@ -28,6 +28,13 @@ Since `HTML5 FileAPI` has been described by the W3C (terse, technical) and Mozil
   * `FileError` and `FileException` are not yet implemented (they use `Error` instead)
   * `blob: scheme` and remote `URI schemes` are not yet implemented
 
+FormData
+----
+
+[FormData on MDN](https://developer.mozilla.org/en/XMLHttpRequest/FormData)
+
+Has the special method `setNodeChunkedEncoding()`
+
 File
 ----
 
@@ -166,10 +173,10 @@ W3C
 
 Mozilla Developer Center:
 
-  * [MDC: Using files from web applications](https://developer.mozilla.org/en/using_files_from_web_applications)
-  * [MDC: File](https://developer.mozilla.org/en/DOM/File)
-  * [MDC: FileList](https://developer.mozilla.org/en/DOM/FileList)
-  * [MDC: FileReader](https://developer.mozilla.org/en/DOM/FileReader)
+  * [MDN: Using files from web applications](https://developer.mozilla.org/en/using_files_from_web_applications)
+  * [MDN: File](https://developer.mozilla.org/en/DOM/File)
+  * [MDN: FileList](https://developer.mozilla.org/en/DOM/FileList)
+  * [MDN: FileReader](https://developer.mozilla.org/en/DOM/FileReader)
 
 TODO
 ====

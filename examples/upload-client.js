@@ -6,7 +6,7 @@
     File = require('../lib/file.js'),
     FormData = require('../lib/form-data.js'),
     formData = new FormData(),
-    client = http.createClient(3000, 'localhost'),
+    client = http.createClient(process.argv[3] || 3000, process.argv[2] || 'localhost'),
     headers = {
       "Host": "localhost:3000",
       "User-Agent": "Node.js (AbstractHttpRequest)",
