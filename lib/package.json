@@ -6,6 +6,7 @@
   "author"        : "AJ ONeal <coolaj86@gmail.com>",
   "contributors"  : [],
   "dependencies"  : {
+                      "remedial": "> 0.0.0",
                       "mime": "> 0.0.0",
                       "bufferjs": "> 0.2.0",
                       "noop": ">= 0.1.0",
