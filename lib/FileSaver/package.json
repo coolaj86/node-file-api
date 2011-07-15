@@ -1,0 +1,12 @@
+{
+  "name"          : "FileSaver",
+  "description"   : "HTML5 FileAPI `FileSaver` for Node.JS.",
+  "url"           : "http://github.com/coolaj86/node-file-api/",
+  "keywords"      : ["html5", "jsdom", "file-api", "FileSaver"],
+  "author"        : "AJ ONeal <coolaj86@gmail.com>",
+  "contributors"  : [],
+  "dependencies"  : {
+                    },
+  "main"          : "FileSaver.js",
+  "version"       : "0.10.0"
+}

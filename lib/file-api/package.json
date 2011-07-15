@@ -1,0 +1,20 @@
+{
+  "name"          : "file-api",
+  "description"   : "HTML5 FileAPI for Node.JS.",
+  "url"           : "http://github.com/coolaj86/node-file-api/",
+  "keywords"      : ["html5", "jsdom", "file-api"],
+  "author"        : "AJ ONeal <coolaj86@gmail.com>",
+  "contributors"  : [],
+  "dependencies"  : {
+                        "bufferjs": "> 0.2.0"
+                      , "noop": ">= 0.1.0"
+                      , "futures": ">= 1.9.4"
+                      , "File": ">= 0.10.0"
+                      , "FileList": ">= 0.10.0"
+                      , "FileError": ">= 0.10.0"
+                      , "FileReader": ">= 0.10.0"
+                      , "FormData": ">= 0.10.0"
+                    },
+  "main"          : "./index",
+  "version"       : "0.10.0"
+}

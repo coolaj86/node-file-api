@@ -1,0 +1,13 @@
+{
+  "name"          : "FileReader",
+  "description"   : "HTML5 FileAPI `FileReader` for Node.JS.",
+  "url"           : "http://github.com/coolaj86/node-file-api/",
+  "keywords"      : ["html5", "jsdom", "file-api", "FileReader"],
+  "author"        : "AJ ONeal <coolaj86@gmail.com>",
+  "contributors"  : [],
+  "dependencies"  : {
+                      "noop": ">= 0.0.0"
+                    },
+  "main"          : "FileReader.js",
+  "version"       : "0.10.0"
+}

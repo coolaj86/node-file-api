@@ -1,0 +1,12 @@
+{
+  "name"          : "Blob",
+  "description"   : "HTML5 FileAPI `Blob` for Node.JS.",
+  "url"           : "http://github.com/coolaj86/node-file-api/",
+  "keywords"      : ["html5", "jsdom", "file-api", "Blob"],
+  "author"        : "AJ ONeal <coolaj86@gmail.com>",
+  "contributors"  : [],
+  "dependencies"  : {
+                    },
+  "main"          : "Blob.js",
+  "version"       : "0.10.0"
+}
