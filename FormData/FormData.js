@@ -10,7 +10,7 @@
   require('bufferjs');
 
   var EventEmitter = require('events').EventEmitter,
-    Futures = require('futures'),
+    Sequence = require('sequence'),
     File = require('File'),
     FileReader = require('FileReader');
 
@@ -100,7 +100,7 @@
 
     Array.prototype.forEachAsync = function (callback) {
       var self = this,
-        sequence = Futures.sequence();
+        sequence = Sequence();
 
       function handleItem(item, i, arr) {
         sequence.then(function (next) {

@@ -6,9 +6,9 @@
 (function () {
   "use strict";
 
-  var noop = require("noop"),
-    fs = require("fs"),
-    EventEmitter = require("events").EventEmitter;
+  var fs = require("fs")
+    , EventEmitter = require("events").EventEmitter
+    ;
 
   function toDataUrl(data, type) {
     // var data = self.result;

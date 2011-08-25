@@ -8,7 +8,7 @@
   "dependencies"  : {
                         "bufferjs": ">= 0.0.0"
                       , "remedial": ">= 0.0.0"
-                      , "futures": ">= 2.0.0"
+                      , "sequence": ">= 2.0.0"
                       , "File": ">= 0.0.0"
                       , "FileReader": ">= 0.0.0"
                     },
