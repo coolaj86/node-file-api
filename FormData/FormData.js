@@ -1,3 +1,4 @@
+/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true eqeqeq:true immed:true latedef:true*/
 //
 // FormData
 //
@@ -9,10 +10,11 @@
   require('remedial');
   require('bufferjs');
 
-  var EventEmitter = require('events').EventEmitter,
-    Sequence = require('sequence'),
-    File = require('File'),
-    FileReader = require('FileReader');
+  var EventEmitter = require('events').EventEmitter
+    , forEachAsync = require('forEachAsync')
+    , File = require('File')
+    , FileReader = require('FileReader')
+    ;
 
   function isFile(o) {
     return (o instanceof File) ||
@@ -20,8 +22,10 @@
   }
 
   function FormData() {
-    var self = this,
-      fields = {};
+    var self = this
+      , first = true
+      , fields = {}
+      ;
 
     self.nodeChunkedEncoding = false;
 
@@ -57,7 +61,6 @@
       */
     }
 
-    var first = true;
     function toContentDisposition(key, val) {
       var emitter = new EventEmitter(),
         text = '',
@@ -98,21 +101,6 @@
       return emitter;
     }
 
-    Array.prototype.forEachAsync = function (callback) {
-      var self = this,
-        sequence = Sequence();
-
-      function handleItem(item, i, arr) {
-        sequence.then(function (next) {
-          callback(next, item, i, arr);
-        });
-      }
-
-      this.forEach(handleItem);
-
-      return sequence;
-    };
-
     function toFormData() {
       var emitter = new EventEmitter(),
         buffers = [];
@@ -121,8 +109,8 @@
         buffers.push(data);
       });
 
-      Object.keys(fields).forEachAsync(function (next, key) {
-        fields[key].forEachAsync(function (next, item) {
+      forEachAsync(Object.keys(fields), function (next, key) {
+        forEachAsync(fields[key], function (next, item) {
           var stream = toContentDisposition(key, item);
           stream.on('data', function (data) {
             emitter.emit('data', data);
@@ -179,7 +167,7 @@
         i;
 
       length = len || 8;
-      chars = radix[charset] || charset || radix['base64url'];
+      chars = radix[charset] || charset || radix.base64url;
 
       for (i = 0; i < length; i +=1) {
         seed = Math.floor(Math.random() * chars.length);
@@ -218,12 +206,12 @@
         return toFormData();
       }
 
-      if (!self.type || 'application/x-www-form-urlencoded' === self.type) {
+      if (!self.type || 'application/x-www-form-urlencoded' === self.type.toLowerCase()) {
         self.type = 'application/x-www-form-urlencoded';
         return toFormUrlEncoded();
       }
 
-      if ('application/json' === encoding.toLowerCase()) {
+      if ('application/json' === self.type.toLowerCase()) {
         return toJSON();
       }
     };
