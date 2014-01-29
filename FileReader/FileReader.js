@@ -53,8 +53,6 @@
       emitter = new EventEmitter,
       file;
 
-    require('bufferjs/concat');
-
     self.addEventListener = function (on, callback) {
       emitter.on(on, callback);
     };
