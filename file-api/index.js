@@ -8,7 +8,7 @@
         File: require('File')
       , FileList: require('FileList')
     //, FileError: require('FileError')
-      , FileReader: require('FileReader')
+      , FileReader: require('filereader')
       , FormData: require('FormData')
   };
 
