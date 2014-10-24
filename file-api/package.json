@@ -12,11 +12,11 @@
                       , "File": ">= 0.10.0"
                       , "FileList": ">= 0.10.0"
                       , "FileError": ">= 0.10.0"
-                      , "FileReader": ">= 0.10.0"
+                      , "FileReader": ">= 0.10.3"
                       , "FormData": ">= 0.10.0"
                       , "mime": ">= 1.2.11"
                       , "remedial": ">= 1.0.7"
                     },
   "main"          : "./index",
-  "version"       : "0.10.1"
+  "version"       : "0.10.2"
 }
