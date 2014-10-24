@@ -1,0 +1,18 @@
+[submodule "file-api"]
+	path = file-api
+	url = git@github.com:node-file-api/file-api.git
+[submodule "FormData"]
+	path = FormData
+	url = git@github.com:node-file-api/FormData.git
+[submodule "FileError"]
+	path = FileError
+	url = git@github.com:node-file-api/FileError.git
+[submodule "FileList"]
+	path = FileList
+	url = git@github.com:node-file-api/FileList.git
+[submodule "File"]
+	path = File
+	url = git@github.com:node-file-api/File.git
+[submodule "FileReader"]
+	path = FileReader
+	url = git@github.com:node-file-api/FileReader.git
