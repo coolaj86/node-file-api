@@ -10,6 +10,12 @@
     , EventEmitter = require("events").EventEmitter
     ;
 
+  function doop(fn, args, context) {
+    if ('function' === typeof fn) {
+      fn.apply(context, args);
+    }
+  }
+
   function toDataUrl(data, type) {
     // var data = self.result;
     var dataUrl = 'data:';
